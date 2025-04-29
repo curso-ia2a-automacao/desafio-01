@@ -12,4 +12,4 @@ Atividade 3:
 
             Criar uma nova versão da história “Chapeuzinho Vermelho”.
 
-## PASTAS PARA CADA ATIVIDADE            
+PASTAS PARA CADA ATIVIDADE            
