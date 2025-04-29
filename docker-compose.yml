@@ -1,1 +1,26 @@
+services:
+  airflow:
+    image: apache/airflow:2.7.2-python3.10
+    restart: always
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__FERNET_KEY: ''
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/llm_clients.py:/opt/airflow/llm_clients.py
+      - ./airflow/prompts.py:/opt/airflow/prompts.py
+      - ./output:/opt/airflow/output
+    ports:
+      - "8080:8080"
+    command: bash -c "airflow db init && airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin && airflow webserver & airflow scheduler"
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    volumes:
+      - ./output:/app/output
+    ports:
+      - "8501:8501"
 
