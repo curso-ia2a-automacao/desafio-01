@@ -12,4 +12,10 @@ Atividade 3:
 
             Criar uma nova versão da história “Chapeuzinho Vermelho”.
 
-PASTAS PARA CADA ATIVIDADE            
+UM BRANCH PARA CADA ATIVIDADE 
+
+ORGANIZAÇÃO DAS PASTAS
+
+    - ORQUESTRAÇÃO - AIRFLOW
+    - LLMS
+    - PROMPTS
